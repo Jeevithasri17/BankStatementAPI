@@ -83,13 +83,13 @@ async def uploadFile(file:UploadFile = File(...)):
                 date=data[0]+data[1]+data[2]
                 for i in range(4,len(data)):
                     if(data[i].find('$')):
-                        activity+=data[i-1]+data[i]
+                        activity+=data[i-1]+" "+data[i]
                     else:
+                        amount=data[i]
                         if(count==1):
-                            amount=data[i]
+                            amount=float(data[i][1:])
                             count=0
-                        else:
-                            count+=1
+                        
                 conn.local.user.find_one_and_update({"userAccNumber":userNumber},{"$push":{"userCredit":{"date":date,"activity":activity,"amount":amount}}},{"upsert":True})
         return "Hi "+ userName+"!! Bank statement added successfully"
     else:
