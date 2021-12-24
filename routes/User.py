@@ -45,6 +45,7 @@ async def uploadFile(file:UploadFile = File(...)):
             payment=data[3]+" "+data[4]+" "+data[5]
 
 
+    conn.local.user.drop()
     
     allUsers=serializeList(conn.local.user.find())
 
