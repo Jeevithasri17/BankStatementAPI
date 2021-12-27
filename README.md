@@ -6,5 +6,6 @@ Run the following commands.
 
 1) virtualenv venv
 2) source venv/scripts/activate
-3) pip install pymongo fastapi uvicorn pdfplumber
-4) uvicorn index:app --reload
+3) pip install python-multipart
+4) pip install pymongo fastapi uvicorn pdfplumber
+5) uvicorn index:app --reload
