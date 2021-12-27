@@ -87,7 +87,7 @@ async def uploadFile(file:UploadFile = File(...)):
                         activity+=data[i-1]+" "+data[i]
                     else:
                         amount=data[i]
-                        if(count==1):
+                        if(count==0):
                             amount=float(data[i][1:])
                             count=0
                         
